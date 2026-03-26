@@ -1,3 +1,8 @@
+/* 
+    PROJETO: Renó Soluções Contábeis
+    DESENVOLVEDOR: Patrycke (ADS)
+    PALETA: Azul Profundo e Dourado Premium
+*/
 
 :root {
     --azul-primario: #0A223E;
@@ -8,13 +13,16 @@
     --cinza-suave: #f4f7f9;
 }
 
+/* CONFIGURAÇÕES GERAIS */
 body {
     background-color: var(--branco);
     color: var(--azul-primario);
     font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Navbar de Luxo */
+/* NAVBAR: Fixa no topo com sombra e borda dourada */
 .custom-navbar {
     background-color: var(--azul-primario) !important;
     border-bottom: 3px solid var(--dourado);
@@ -23,6 +31,9 @@ body {
 
 .custom-logo {
     color: var(--branco) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
     letter-spacing: 1px;
 }
 
@@ -40,49 +51,59 @@ body {
     color: var(--dourado-claro) !important;
 }
 
+/* HERO SECTION: Onde a mágica acontece (Imagem + Gradiente) */
 .hero-with-background {
     position: relative;
-    /* Unificamos o gradiente e a imagem. O gradiente vem primeiro para ficar "por cima" */
-    background: linear-gradient(90deg, 
-                rgba(10, 34, 62, 0.95) 0%, 
-                rgba(10, 34, 62, 0.6) 50%, 
-                rgba(10, 34, 62, 0.2) 100%), 
-                url('../img/rafael.jpg'); 
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
+    
+    /* 
+       IMPORTANTE: O gradiente deve vir antes da URL. 
+       O 'center/cover' define posição e tamanho simultaneamente para evitar bugs.
+    */
+    background: linear-gradient(90deg, 
+                rgba(10, 34, 62, 0.95) 0%, 
+                rgba(10, 34, 62, 0.7) 50%, 
+                rgba(10, 34, 62, 0.3) 100%), 
+                url('../img/rafael.jpg') no-repeat center center;
+    background-size: cover;
 }
 
+/* Garante que o texto da Hero fique acima do degradê */
 .hero-with-background .container {
     z-index: 2;
+    position: relative;
 }
 
+/* TIPOGRAFIA AUXILIAR */
 .text-gold {
     color: var(--dourado) !important;
 }
 
-/* Botões com Profundidade */
+/* BOTÕES: Efeitos de elevação e brilho */
 .custom-btn-gold {
     background-color: var(--dourado) !important;
     color: var(--azul-primario) !important;
     border: 1px solid var(--dourado) !important;
+    font-weight: 700;
     box-shadow: 0 4px 15px rgba(191, 154, 86, 0.4);
+    transition: all 0.3s ease;
 }
 
 .custom-btn-gold:hover {
     background-color: var(--dourado-claro) !important;
     transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(191, 154, 86, 0.6);
 }
 
 .custom-btn-outline {
     border: 2px solid var(--dourado) !important;
     color: var(--dourado) !important;
     background: transparent;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 .custom-btn-outline:hover {
@@ -90,26 +111,29 @@ body {
     color: var(--azul-primario) !important;
 }
 
-/* Seção Sobre (Alternando cores) */
+/* SEÇÃO SOBRE */
 #sobre {
     background-color: var(--branco);
+    padding: 80px 0;
 }
 
 .border-gold {
-    border-color: var(--dourado) !important;
+    border-left: 5px solid var(--dourado) !important;
 }
 
-/* Cards de Atuação (Efeito Elevado) */
+/* SEÇÃO ATUAÇÃO: Cards interativos */
 #atuacao {
     background-color: var(--cinza-suave);
+    padding: 80px 0;
 }
 
 .custom-card-atuacao {
     background-color: var(--branco);
-    border-top: 4px solid var(--dourado) !important;
-    border-radius: 10px;
+    border-top: 5px solid var(--dourado) !important;
+    border-radius: 12px;
     box-shadow: 0 10px 30px rgba(10, 34, 62, 0.08);
-    transition: 0.4s;
+    transition: all 0.4s ease;
+    border: none;
 }
 
 .custom-card-atuacao:hover {
@@ -117,46 +141,60 @@ body {
     transform: translateY(-10px);
 }
 
+/* Muda a cor do texto do card no hover */
 .custom-card-atuacao:hover h3, 
-.custom-card-atuacao:hover p {
+.custom-card-atuacao:hover p,
+.custom-card-atuacao:hover i {
     color: var(--branco) !important;
 }
 
-/* Seção de Contato - O "Coração" do site */
+/* SEÇÃO CONTATO: Form estilo sistema Dark */
 #contato {
     background: var(--azul-primario);
-    position: relative;
+    padding: 80px 0;
 }
 
 #contato .card {
     background-color: var(--azul-secundario);
     border: 1px solid rgba(191, 154, 86, 0.3);
     border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
 #contato .form-label {
     color: var(--dourado-claro);
+    font-weight: 600;
 }
 
 .form-control, .form-select {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(191, 154, 86, 0.2);
-    color: var(--branco);
+    color: var(--branco) !important;
+}
+
+/* Estilo do placeholder para o formulário dark */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .form-control:focus {
     background-color: rgba(255, 255, 255, 0.1);
-    color: var(--branco);
     border-color: var(--dourado);
     box-shadow: 0 0 10px rgba(191, 154, 86, 0.3);
 }
 
-/* Login Page Integrada */
+/* PÁGINA DE LOGIN: Radial Gradient focado no centro */
 .login-page {
     background: radial-gradient(circle, var(--azul-secundario) 0%, var(--azul-primario) 100%);
+    min-height: 100vh;
 }
 
 .login-card {
     background-color: var(--branco) !important;
     border-radius: 20px;
+    border-top: 6px solid var(--dourado) !important;
+}
+
+.logo-login {
+    color: var(--azul-primario);
 }
