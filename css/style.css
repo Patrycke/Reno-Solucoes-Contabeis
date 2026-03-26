@@ -54,6 +54,12 @@ body {
     object-fit: cover; /* Garante que preencha o espaço sem distorcer */
 }
 
+@media (max-width: 768px) {
+    .sobre-img {
+        max-height: 350px; /* Reduz a altura máxima em telas menores */
+    }
+}
+
 /* No style.css */
 #sobre .row {
     align-items: center; /* Centraliza verticalmente o texto com a imagem */
