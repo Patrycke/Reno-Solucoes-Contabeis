@@ -47,6 +47,25 @@ body {
     }
 }
 
+/* Ajuste customizado para a imagem da seção SOBRE */
+.sobre-img {
+    max-height: 500px; /* Limita a altura máxima para não quebrar o layout */
+    width: auto;       /* Mantém a proporção */
+    object-fit: cover; /* Garante que preencha o espaço sem distorcer */
+}
+
+/* Centralização do container da imagem */
+.sobre-img-container {
+    padding: 20px; /* Dá um respiro se a tela for pequena */
+}
+
+/* Correção na posição do Badge Dourado */
+#badge-transparencia {
+    bottom: 20px;  /* Ajuste a distância do fundo da imagem */
+    left: -20px;   /* Ajuste para que fique um pouco para fora, se preferir */
+    transform: translate(-50%, 0); /* Garante centralização lateral correta */
+}
+
 .custom-logo {
     color: var(--branco) !important;
     font-weight: 700;
