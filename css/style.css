@@ -62,3 +62,77 @@
     background: rgba(255, 255, 255, 0.03);
     border-radius: 8px;
 }
+
+/* Estilos para a Página de Login */
+.login-page {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+    font-family: 'Inter', sans-serif;
+}
+
+.login-card {
+    border-radius: 12px;
+    border-top: 5px solid var(--dourado);
+    background-color: var(--branco) !important;
+}
+
+.logo-login {
+    color: var(--azul-primario) !important;
+    letter-spacing: 1px;
+}
+
+.logo-login span {
+    color: var(--dourado);
+}
+
+.custom-input {
+    border-radius: 6px !important;
+    border: 1px solid #ddd !important;
+}
+
+.custom-input:focus {
+    border-color: var(--dourado) !important;
+    box-shadow: 0 0 5px rgba(191, 154, 86, 0.2);
+}
+
+.text-muted-login, .text-muted-login a {
+    color: rgba(254, 253, 255, 0.6) !important;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.text-muted-login a:hover {
+    color: var(--dourado) !important;
+}
+
+.hero-with-background {
+    /* Define a imagem de fundo */
+    background-image: url('img/rafael.webp');
+
+    /* Define como a imagem é exibida */
+    background-size: cover;          /* Cobre toda a área da seção */
+    background-position: center;     /* Centraliza a imagem */
+    background-repeat: no-repeat;    /* Não repete a imagem */
+
+    /* Importante para contraste: se a imagem for clara, o texto branco do secondary não aparecerá. */
+    /* Se a imagem for muito clara, você pode precisar adicionar um overlay escuro. */
+    color: #fff; /* Define uma cor padrão para o texto */
+}
+
+/* Opcional: Adicionar um overlay escuro se a imagem for muito clara e dificultar a leitura do texto */
+/*
+.hero-with-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajuste a opacidade (0.4) conforme necessário */
+    z-index: 1; /* Garante que o overlay fique atrás do conteúdo */
+}
+
+.uk-container {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique à frente do overlay */
+}
+*/
