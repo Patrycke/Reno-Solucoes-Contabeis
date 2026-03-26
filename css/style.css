@@ -29,6 +29,24 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
+/* Estilo específico para o logo na navbar */
+.brand-logo {
+    height: 40px; /* Define uma altura fixa para não quebrar a navbar */
+    width: auto;   /* Mantém a proporção da imagem */
+    filter: drop-shadow(0 0 5px rgba(191, 154, 86, 0.3)); /* Adiciona um brilho dourado suave */
+}
+
+/* Ajuste fino no tamanho da fonte do nome se necessário */
+.custom-logo span {
+    font-size: 1.3rem; /* Um pouco menor para caber com o logo */
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        height: 35px; /* Menor no celular */
+    }
+}
+
 .custom-logo {
     color: var(--branco) !important;
     font-weight: 700;
@@ -67,7 +85,7 @@ body {
                 rgba(10, 34, 62, 0.95) 0%, 
                 rgba(10, 34, 62, 0.7) 50%, 
                 rgba(10, 34, 62, 0.3) 100%), 
-                url('../img/rafael.jpg') no-repeat center center;
+                url('../img/rafael.webp') no-repeat center center;
     background-size: cover;
 }
 
