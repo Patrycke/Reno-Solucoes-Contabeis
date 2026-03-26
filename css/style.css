@@ -1,177 +1,64 @@
-/* Variáveis de Cores (Suas escolhas oficiais) */
+/* Sua Paleta de Cores */
 :root {
-    --azul-escuro: #0A223E;
-    --azul-medio: #1B375D;
+    --azul-primario: #0A223E;
+    --azul-secundario: #1B375D;
     --dourado: #BF9A56;
     --dourado-claro: #F2DA91;
     --branco: #FEFDFF;
-    --text-muted: #aab0b8;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Navbar Customizada */
+.custom-navbar {
+    background-color: var(--azul-primario) !important;
+    border-bottom: 2px solid var(--dourado);
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: var(--azul-escuro);
-    background-color: var(--branco);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navbar */
-.navbar {
-    background-color: var(--azul-escuro);
-    padding: 20px 0;
-    border-bottom: 3px solid var(--dourado);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: var(--branco);
+.custom-logo {
+    color: var(--branco) !important;
     font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
 }
 
-.logo span {
+.custom-logo span {
     color: var(--dourado);
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
+.uk-navbar-nav > li > a {
+    color: var(--branco) !important;
+    text-transform: none;
+    font-size: 1rem;
 }
 
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--branco);
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--dourado-claro);
-}
-
-.btn-nav {
-    border: 1px solid var(--dourado);
-    padding: 8px 15px;
+/* Botão Dourado */
+.custom-btn-gold {
+    background-color: var(--dourado) !important;
+    color: var(--azul-primario) !important;
+    font-weight: 700;
     border-radius: 4px;
+    border: none;
 }
 
 /* Hero Section */
-.hero {
-    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 100%);
-    color: var(--branco);
-    padding: 100px 0;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
+.custom-hero {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%) !important;
 }
 
-.hero-grid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
+.text-gold {
+    color: var(--dourado) !important;
 }
 
-.hero-text {
-    flex: 1;
+.text-muted {
+    color: rgba(254, 253, 255, 0.7) !important;
 }
 
-.hero-text h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
+.custom-btn-outline {
+    border: 1px solid var(--dourado) !important;
+    color: var(--dourado) !important;
 }
 
-.highlight {
-    color: var(--dourado);
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 40px;
-    max-width: 500px;
-}
-
-.btn-main {
-    display: inline-block;
-    background-color: var(--dourado);
-    color: var(--azul-escuro);
-    text-decoration: none;
-    padding: 15px 40px;
-    font-weight: 700;
-    border-radius: 4px;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.btn-main:hover {
-    background-color: var(--dourado-claro);
-    transform: translateY(-3px);
-}
-
-.hero-badge {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.badge-content {
-    border: 2px solid var(--dourado);
+/* Card do CRC */
+.custom-card-crc {
+    border: 1px solid var(--dourado);
     padding: 40px;
-    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.badge-content .name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.badge-content .crc {
-    color: var(--dourado);
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-}
-
-/* Responsividade Básica */
-@media (max-width: 768px) {
-    .hero-grid {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-    .nav-links {
-        display: none; /* Ideal seria um menu hambúrguer depois */
-    }
 }

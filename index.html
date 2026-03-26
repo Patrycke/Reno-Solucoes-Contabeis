@@ -3,41 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renó Soluções Contábeis - Especialista em Prestadores de Serviços</title>
+    <title>Renó Soluções Contábeis | UIkit Version</title>
+    
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/css/uikit.min.css" />
+    <!-- Seu CSS Personalizado -->
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte Inter para um ar moderno -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                RENÓ <span>CONTABILIDADE</span>
+    <!-- Navbar UIkit -->
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+        <nav class="uk-navbar-container custom-navbar" uk-navbar>
+            <div class="uk-container uk-container-expand uk-width-1-1">
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo custom-logo" href="#">
+                        RENÓ <span>CONTABILIDADE</span>
+                    </a>
+                </div>
+                <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                    </ul>
+                    <div class="uk-navbar-item">
+                        <a href="https://wa.me/5548991799990" class="uk-button custom-btn-gold">Falar com Rafael</a>
+                    </div>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="https://wa.me/5548991799990" class="btn-nav">Falar com Rafael</a></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
-    <header id="home" class="hero">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <h1>Especialista em <span class="highlight">Prestadores de Serviços</span></h1>
-                <p>Gestão contábil estratégica em Biguaçu e região. Focamos no seu CNPJ para você focar no seu crescimento.</p>
-                <a href="https://wa.me/5548991799990" class="btn-main">Solicitar Consultoria</a>
-            </div>
-            <div class="hero-badge">
-                <div class="badge-content">
-                    <p class="name">Rafael Renó da Silva</p>
-                    <p class="crc">CRC/SC 047017/O</p>
+    <!-- Hero Section com UIkit Grid -->
+    <section class="uk-section uk-section-secondary uk-flex uk-flex-middle custom-hero" uk-height-viewport="offset-top: true">
+        <div class="uk-container">
+            <div class="uk-grid-large uk-child-width-1-2@m uk-flex-middle" uk-grid>
+                <div>
+                    <h1 class="uk-heading-small uk-text-bold">Especialista em <span class="text-gold">Prestadores de Serviços</span></h1>
+                    <p class="uk-text-lead text-muted">Contabilidade consultiva e estratégica para o seu negócio decolar em Biguaçu e região.</p>
+                    <div class="uk-margin-medium-top">
+                        <a href="#" class="uk-button uk-button-default uk-button-large custom-btn-outline">Ver Serviços</a>
+                    </div>
+                </div>
+                <div class="uk-text-center">
+                    <div class="uk-inline">
+                        <div class="custom-card-crc">
+                            <h3 class="uk-margin-remove">Rafael Renó da Silva</h3>
+                            <p class="uk-text-meta uk-margin-remove text-gold">CRC/SC 047017/O</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
 </body>
 </html>
