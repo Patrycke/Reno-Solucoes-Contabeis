@@ -4,55 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acesso Restrito | Renó Soluções Contábeis</title>
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/css/uikit.min.css" />
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="login-page">
 
-    <div class="uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
-        <div class="uk-width-large uk-padding-small">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="login-card-wrapper w-100" style="max-width: 400px;">
             
-            <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large login-card">
-                <div class="uk-text-center uk-margin-bottom">
-                    <h2 class="uk-card-title uk-text-bold logo-login">RENÓ <span>CONTABILIDADE</span></h2>
-                    <p class="uk-text-meta">Área do Cliente - Acesso Restrito</p>
+            <div class="card border-0 shadow-lg login-card p-4">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold logo-login">RENÓ <span class="text-gold">CONTABILIDADE</span></h2>
+                    <p class="text-muted small">Área do Cliente - Acesso Restrito</p>
                 </div>
 
                 <form>
-                    <div class="uk-margin">
-                        <div class="uk-inline uk-width-1-1">
-                            <span class="uk-form-icon" uk-icon="icon: user"></span>
-                            <input class="uk-input custom-input" type="email" placeholder="E-mail ou CPF" required>
-                        </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text bg-light border-end-0"><i class="bi bi-person"></i></span>
+                        <input type="email" class="form-control custom-input border-start-0" placeholder="E-mail ou CPF" required>
                     </div>
 
-                    <div class="uk-margin">
-                        <div class="uk-inline uk-width-1-1">
-                            <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                            <input class="uk-input custom-input" type="password" placeholder="Sua senha" required>
-                        </div>
+                    <div class="input-group mb-4">
+                        <span class="input-group-text bg-light border-end-0"><i class="bi bi-lock"></i></span>
+                        <input type="password" class="form-control custom-input border-start-0" placeholder="Sua senha" required>
                     </div>
 
-                    <div class="uk-margin">
-                        <button class="uk-button uk-width-1-1 custom-btn-gold">ENTRAR NO SISTEMA</button>
-                    </div>
+                    <button type="submit" class="btn w-100 custom-btn-gold py-2 mb-3">ENTRAR NO SISTEMA</button>
 
-                    <div class="uk-text-center">
-                        <a href="https://wa.me/5548991799990" class="uk-link-reset uk-text-small text-gold">Esqueceu a senha? Falar com suporte</a>
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none small text-gold">Esqueceu a senha? Falar com suporte</a>
                     </div>
                 </form>
             </div>
 
-            <p class="uk-text-center uk-margin-top text-muted-login">
-                <a href="index.html" class="uk-link-muted"><span uk-icon="icon: arrow-left"></span> Voltar para o site</a>
-            </p>
+            <div class="text-center mt-4">
+                <a href="index.html" class="text-white-50 text-decoration-none">
+                    <i class="bi bi-arrow-left"></i> Voltar para o site
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
 </body>
 </html>

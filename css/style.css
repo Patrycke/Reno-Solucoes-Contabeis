@@ -1,4 +1,3 @@
-/* Sua Paleta de Cores */
 :root {
     --azul-primario: #0A223E;
     --azul-secundario: #1B375D;
@@ -7,118 +6,66 @@
     --branco: #FEFDFF;
 }
 
-/* Navbar Customizada */
+/* Navbar */
 .custom-navbar {
     background-color: var(--azul-primario) !important;
     border-bottom: 2px solid var(--dourado);
+    padding: 15px 0;
 }
 
 .custom-logo {
     color: var(--branco) !important;
     font-weight: 700;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .custom-logo span {
     color: var(--dourado);
 }
 
-.uk-navbar-nav > li > a {
+.navbar-nav .nav-link {
     color: var(--branco) !important;
-    text-transform: none;
     font-size: 1rem;
+    padding: 0 15px !important;
 }
 
-/* Botão Dourado */
+/* Botões */
 .custom-btn-gold {
     background-color: var(--dourado) !important;
     color: var(--azul-primario) !important;
     font-weight: 700;
-    border-radius: 4px;
     border: none;
+    transition: transform 0.2s;
 }
 
-/* Hero Section */
-.custom-hero {
-    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%) !important;
-}
-
-.text-gold {
-    color: var(--dourado) !important;
-}
-
-.text-muted {
-    color: rgba(254, 253, 255, 0.7) !important;
+.custom-btn-gold:hover {
+    background-color: var(--dourado-claro) !important;
+    transform: translateY(-2px);
 }
 
 .custom-btn-outline {
-    border: 1px solid var(--dourado) !important;
+    border: 2px solid var(--dourado) !important;
     color: var(--dourado) !important;
-}
-
-/* Card do CRC */
-.custom-card-crc {
-    border: 1px solid var(--dourado);
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-}
-
-/* Estilos para a Página de Login */
-.login-page {
-    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
-    font-family: 'Inter', sans-serif;
-}
-
-.login-card {
-    border-radius: 12px;
-    border-top: 5px solid var(--dourado);
-    background-color: var(--branco) !important;
-}
-
-.logo-login {
-    color: var(--azul-primario) !important;
-    letter-spacing: 1px;
-}
-
-.logo-login span {
-    color: var(--dourado);
-}
-
-.custom-input {
-    border-radius: 6px !important;
-    border: 1px solid #ddd !important;
-}
-
-.custom-input:focus {
-    border-color: var(--dourado) !important;
-    box-shadow: 0 0 5px rgba(191, 154, 86, 0.2);
-}
-
-.text-muted-login, .text-muted-login a {
-    color: rgba(254, 253, 255, 0.6) !important;
-    font-size: 0.9rem;
+    font-weight: 600;
     text-decoration: none;
 }
 
-.text-muted-login a:hover {
-    color: var(--dourado) !important;
+.custom-btn-outline:hover {
+    background-color: var(--dourado) !important;
+    color: var(--azul-primario) !important;
 }
 
+/* Hero Section com Imagem do Rafael */
 .hero-with-background {
-    /* Define a imagem de fundo */
+    position: relative;
     background-image: url('img/rafael.webp');
-
-    /* Define como a imagem é exibida */
-    background-size: cover;          /* Cobre toda a área da seção */
-    background-position: center;     /* Centraliza a imagem */
-    background-repeat: no-repeat;    /* Não repete a imagem */
-
-    /* Importante para contraste: se a imagem for clara, o texto branco do secondary não aparecerá. */
-    /* Se a imagem for muito clara, você pode precisar adicionar um overlay escuro. */
-    color: #fff; /* Define uma cor padrão para o texto */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-/* Opcional: Adicionar um overlay escuro se a imagem for muito clara e dificultar a leitura do texto */
 .hero-with-background::before {
     content: "";
     position: absolute;
@@ -126,11 +73,46 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Ajuste a opacidade (0.4) conforme necessário */
-    z-index: 1; /* Garante que o overlay fique atrás do conteúdo */
+    background: linear-gradient(90deg, rgba(10, 34, 62, 0.9) 0%, rgba(10, 34, 62, 0.4) 100%);
+    z-index: 1;
 }
 
-.uk-container {
-    position: relative;
-    z-index: 2; /* Garante que o conteúdo fique à frente do overlay */
+.text-gold {
+    color: var(--dourado) !important;
+}
+
+/* Card CRC */
+.custom-card-crc {
+    border: 1px solid var(--dourado);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+}
+
+/* Atuação */
+.custom-card-atuacao {
+    transition: transform 0.3s;
+}
+
+.custom-card-atuacao:hover {
+    transform: translateY(-10px);
+}
+
+/* Login Page */
+.login-page {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+}
+
+.login-card {
+    border-top: 5px solid var(--dourado) !important;
+}
+
+.logo-login {
+    color: var(--azul-primario);
+}
+
+.custom-input:focus {
+    border-color: var(--dourado) !important;
+    box-shadow: 0 0 5px rgba(191, 154, 86, 0.3) !important;
 }
