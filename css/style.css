@@ -42,7 +42,13 @@ body {
 
 .hero-with-background {
     position: relative;
-    background-image: url('../img/rafael.jpg');
+    /* Unificamos o gradiente e a imagem. O gradiente vem primeiro para ficar "por cima" */
+    background: linear-gradient(90deg, 
+                rgba(10, 34, 62, 0.95) 0%, 
+                rgba(10, 34, 62, 0.6) 50%, 
+                rgba(10, 34, 62, 0.2) 100%), 
+                url('../img/rafael.jpg'); 
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -50,21 +56,6 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-}
-
-.hero-with-background::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Degradê do Azul Primário para Transparente */
-    background: linear-gradient(90deg, 
-        rgba(10, 34, 62, 0.95) 0%, 
-        rgba(10, 34, 62, 0.6) 50%, 
-        rgba(10, 34, 62, 0.2) 100%);
-    z-index: 1;
 }
 
 .hero-with-background .container {
