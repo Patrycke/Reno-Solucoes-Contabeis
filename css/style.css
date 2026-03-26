@@ -42,8 +42,11 @@ body {
 
 /* Hero Section Profissional */
 .hero-with-background {
-    background: linear-gradient(135deg, var(--azul-primario) 20%, var(--azul-secundario) 100%);
-    border-bottom: 5px solid var(--dourado);
+    background-image: url('../img/rafael.webp') !important; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Certifique-se que tem altura */
 }
 
 .text-gold {
