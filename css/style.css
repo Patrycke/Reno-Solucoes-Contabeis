@@ -1,0 +1,20 @@
+:root {
+  --azul-primario: #0A223E;
+  --azul-secundario: #1B375D;
+  --dourado-escuro: #BF9A56;
+  --dourado-claro: #F2DA91;
+  --branco-limpo: #FEFDFF;
+}
+
+/* Exemplo de uso no Botão de Orçamento */
+.btn-orcamento {
+  background-color: var(--dourado-escuro);
+  color: var(--azul-primario);
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-orcamento:hover {
+  background-color: var(--dourado-claro);
+}
