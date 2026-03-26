@@ -119,7 +119,6 @@
 }
 
 /* Opcional: Adicionar um overlay escuro se a imagem for muito clara e dificultar a leitura do texto */
-/*
 .hero-with-background::before {
     content: "";
     position: absolute;
@@ -135,4 +134,3 @@
     position: relative;
     z-index: 2; /* Garante que o conteúdo fique à frente do overlay */
 }
-*/
