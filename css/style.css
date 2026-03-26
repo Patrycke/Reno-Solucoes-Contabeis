@@ -4,6 +4,7 @@
     PALETA: Azul Profundo e Dourado Premium
 */
 
+/* 1. VARIÁVEIS E CONFIGURAÇÕES GERAIS */
 :root {
     --azul-primario: #0A223E;
     --azul-secundario: #1B375D;
@@ -13,7 +14,6 @@
     --cinza-suave: #f4f7f9;
 }
 
-/* CONFIGURAÇÕES GERAIS */
 body {
     background-color: var(--branco);
     color: var(--azul-primario);
@@ -22,115 +22,9 @@ body {
     padding: 0;
 }
 
-/* NAVBAR: Fixa no topo com sombra e borda dourada */
-.custom-navbar {
-    background-color: var(--azul-primario) !important;
-    border-bottom: 3px solid var(--dourado);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
+/* 2. COMPONENTES GLOBAIS (Botões e Tipografia) */
+.text-gold { color: var(--dourado) !important; }
 
-/* Estilo específico para o logo na navbar */
-.brand-logo {
-    height: 40px; /* Define uma altura fixa para não quebrar a navbar */
-    width: auto;   /* Mantém a proporção da imagem */
-    filter: drop-shadow(0 0 5px rgba(191, 154, 86, 0.3)); /* Adiciona um brilho dourado suave */
-}
-
-/* Ajuste fino no tamanho da fonte do nome se necessário */
-.custom-logo span {
-    font-size: 1.3rem; /* Um pouco menor para caber com o logo */
-}
-
-@media (max-width: 768px) {
-    .brand-logo {
-        height: 35px; /* Menor no celular */
-    }
-}
-
-/* Ajuste customizado para a imagem da seção SOBRE */
-.sobre-img {
-    max-height: 500px; /* Limita a altura máxima para não quebrar o layout */
-    width: auto;       /* Mantém a proporção */
-    object-fit: cover; /* Garante que preencha o espaço sem distorcer */
-}
-
-@media (max-width: 768px) {
-    .sobre-img {
-        max-height: 350px; /* Reduz a altura máxima em telas menores */
-    }
-}
-
-/* No style.css */
-#sobre .row {
-    align-items: center; /* Centraliza verticalmente o texto com a imagem */
-}
-
-/* Centralização do container da imagem */
-.sobre-img-container {
-    padding: 20px; /* Dá um respiro se a tela for pequena */
-}
-
-/* Correção na posição do Badge Dourado */
-#badge-transparencia {
-    bottom: 20px;  /* Ajuste a distância do fundo da imagem */
-    left: -20px;   /* Ajuste para que fique um pouco para fora, se preferir */
-    transform: translate(-50%, 0); /* Garante centralização lateral correta */
-}
-
-.custom-logo {
-    color: var(--branco) !important;
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-.custom-logo span {
-    color: var(--dourado);
-}
-
-.nav-link {
-    color: var(--branco) !important;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-link:hover {
-    color: var(--dourado-claro) !important;
-}
-
-/* HERO SECTION: Onde a mágica acontece (Imagem + Gradiente) */
-.hero-with-background {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    
-    /* 
-       IMPORTANTE: O gradiente deve vir antes da URL. 
-       O 'center/cover' define posição e tamanho simultaneamente para evitar bugs.
-    */
-    background: linear-gradient(90deg, 
-                rgba(10, 34, 62, 0.95) 0%, 
-                rgba(10, 34, 62, 0.7) 50%, 
-                rgba(10, 34, 62, 0.3) 100%), 
-                url('../img/rafael.webp') no-repeat center center;
-    background-size: cover;
-}
-
-/* Garante que o texto da Hero fique acima do degradê */
-.hero-with-background .container {
-    z-index: 2;
-    position: relative;
-}
-
-/* TIPOGRAFIA AUXILIAR */
-.text-gold {
-    color: var(--dourado) !important;
-}
-
-/* BOTÕES: Efeitos de elevação e brilho */
 .custom-btn-gold {
     background-color: var(--dourado) !important;
     color: var(--azul-primario) !important;
@@ -159,17 +53,101 @@ body {
     color: var(--azul-primario) !important;
 }
 
-/* SEÇÃO SOBRE */
+/* 3. NAVBAR */
+.custom-navbar {
+    background-color: var(--azul-primario) !important;
+    border-bottom: 3px solid var(--dourado);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.brand-logo {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(191, 154, 86, 0.3));
+}
+
+.custom-logo {
+    color: var(--branco) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.custom-logo span {
+    color: var(--dourado);
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    color: var(--branco) !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--dourado-claro) !important;
+}
+
+/* 4. HERO SECTION */
+.hero-with-background {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(90deg, 
+                rgba(10, 34, 62, 0.95) 0%, 
+                rgba(10, 34, 62, 0.7) 50%, 
+                rgba(10, 34, 62, 0.3) 100%), 
+                url('../img/rafael.webp') no-repeat center center;
+    background-size: cover;
+}
+
+.hero-with-background .container {
+    z-index: 2;
+    position: relative;
+}
+
+/* 5. SEÇÃO SOBRE (Overlay e Imagem) */
 #sobre {
     background-color: var(--branco);
     padding: 80px 0;
 }
 
+.sobre-overlay {
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+    background: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0) 100%),
+        linear-gradient(to right, rgba(10, 34, 62, 1) 0%, rgba(10, 34, 62, 0.9) 40%, rgba(10, 34, 62, 0) 100%),
+        url('../img/rafael-reno-sobre.png') no-repeat center center;
+    background-size: cover;
+}
+
+.sobre-content { z-index: 2; }
+
 .border-gold {
     border-left: 5px solid var(--dourado) !important;
 }
 
-/* SEÇÃO ATUAÇÃO: Cards interativos */
+/* Elementos de Imagem (Se usar tag <img> em vez de overlay) */
+.sobre-img {
+    max-height: 850px;
+    width: auto;
+    object-fit: cover;
+}
+
+.sobre-img-container { padding: 20px; }
+
+#badge-transparencia {
+    bottom: 20px;
+    left: -20px;
+    transform: translate(-50%, 0);
+}
+
+/* 6. SEÇÃO ATUAÇÃO (Cards) */
 #atuacao {
     background-color: var(--cinza-suave);
     padding: 80px 0;
@@ -189,14 +167,13 @@ body {
     transform: translateY(-10px);
 }
 
-/* Muda a cor do texto do card no hover */
 .custom-card-atuacao:hover h3, 
 .custom-card-atuacao:hover p,
 .custom-card-atuacao:hover i {
     color: var(--branco) !important;
 }
 
-/* SEÇÃO CONTATO: Form estilo sistema Dark */
+/* 7. SEÇÃO CONTATO */
 #contato {
     background: var(--azul-primario);
     padding: 80px 0;
@@ -220,10 +197,7 @@ body {
     color: var(--branco) !important;
 }
 
-/* Estilo do placeholder para o formulário dark */
-.form-control::placeholder {
-    color: rgba(255, 255, 255, 0.3);
-}
+.form-control::placeholder { color: rgba(255, 255, 255, 0.3); }
 
 .form-control:focus {
     background-color: rgba(255, 255, 255, 0.1);
@@ -231,7 +205,7 @@ body {
     box-shadow: 0 0 10px rgba(191, 154, 86, 0.3);
 }
 
-/* PÁGINA DE LOGIN: Radial Gradient focado no centro */
+/* 8. PÁGINA DE LOGIN */
 .login-page {
     background: radial-gradient(circle, var(--azul-secundario) 0%, var(--azul-primario) 100%);
     min-height: 100vh;
@@ -243,6 +217,31 @@ body {
     border-top: 6px solid var(--dourado) !important;
 }
 
-.logo-login {
-    color: var(--azul-primario);
+.logo-login { color: var(--azul-primario); }
+
+/* 9. MEDIA QUERIES (Responsividade) */
+@media (max-width: 991px) {
+    .sobre-overlay {
+        min-height: auto;
+        padding: 60px 0;
+        background: 
+            linear-gradient(to bottom, rgba(10, 34, 62, 1) 0%, rgba(10, 34, 62, 0.95) 100%),
+            url('../img/sobre-escritorio.webp') no-repeat center center;
+        background-size: cover;
+    }
+    
+    .text-sobre h2, .text-sobre p { text-align: center; }
+    
+    .italic-box, .diferencial-box {
+        text-align: center;
+        justify-content: center;
+        border-left: none !important;
+        border-top: 2px solid var(--dourado) !important;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-logo { height: 35px; }
+    .sobre-img { max-height: 350px; }
 }
