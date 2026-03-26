@@ -54,6 +54,11 @@ body {
     object-fit: cover; /* Garante que preencha o espaço sem distorcer */
 }
 
+/* No style.css */
+#sobre .row {
+    align-items: center; /* Centraliza verticalmente o texto com a imagem */
+}
+
 /* Centralização do container da imagem */
 .sobre-img-container {
     padding: 20px; /* Dá um respiro se a tela for pequena */
