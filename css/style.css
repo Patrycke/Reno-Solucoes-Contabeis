@@ -294,3 +294,17 @@ body {
         max-height: 350px; /* Reduz a altura máxima em telas menores */
     }
 }
+
+#sobre p {
+    margin-bottom: 0.8rem; /* Controla o espaço entre um parágrafo e outro */
+    line-height: 1.5;      /* Controla a altura da linha (entrelinha) do texto */
+}
+
+#sobre h2 {
+    margin-bottom: 1rem;   /* Espaço abaixo do título principal */
+}
+
+.italic-box {
+    margin-top: 1.5rem !important;    /* Espaço acima da citação */
+    margin-bottom: 1.5rem !important; /* Espaço abaixo da citação */
+}
