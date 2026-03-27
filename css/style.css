@@ -4,7 +4,9 @@
     PALETA: Azul Profundo e Dourado Premium
 */
 
-/* 1. VARIÁVEIS E CONFIGURAÇÕES GERAIS */
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
 :root {
     --azul-primario: #0A223E;
     --azul-secundario: #1B375D;
@@ -22,9 +24,12 @@ body {
     padding: 0;
 }
 
-/* 2. COMPONENTES GLOBAIS (Botões e Tipografia) */
+/* ==========================================================================
+   2. COMPONENTES GLOBAIS (Botões e Utilidades)
+   ========================================================================== */
 .text-gold { color: var(--dourado) !important; }
 
+/* Botão Principal Dourado */
 .custom-btn-gold {
     background-color: var(--dourado) !important;
     color: var(--azul-primario) !important;
@@ -40,6 +45,7 @@ body {
     box-shadow: 0 6px 20px rgba(191, 154, 86, 0.6);
 }
 
+/* Botão Outline */
 .custom-btn-outline {
     border: 2px solid var(--dourado) !important;
     color: var(--dourado) !important;
@@ -53,7 +59,9 @@ body {
     color: var(--azul-primario) !important;
 }
 
-/* 3. NAVBAR */
+/* ==========================================================================
+   3. NAVEGAÇÃO (Navbar)
+   ========================================================================== */
 .custom-navbar {
     background-color: var(--azul-primario) !important;
     border-bottom: 3px solid var(--dourado);
@@ -89,7 +97,9 @@ body {
     color: var(--dourado-claro) !important;
 }
 
-/* 4. HERO SECTION */
+/* ==========================================================================
+   4. HERO SECTION (Destaque Principal)
+   ========================================================================== */
 .hero-with-background {
     position: relative;
     min-height: 100vh;
@@ -109,56 +119,74 @@ body {
     position: relative;
 }
 
-/* 5. SEÇÃO SOBRE (Overlay e Imagem) */
+/* ==========================================================================
+   5. SEÇÃO SOBRE (Texto e Imagem Lateral)
+   ========================================================================== */
 #sobre {
     background-color: var(--branco);
     padding: 80px 0;
 }
 
-.sobre-overlay {
-    position: relative;
-    min-height: 80vh;
-    width: 100%;
-    background: 
-        linear-gradient(to right, rgb(255, 255, 255) 0%,rgb(209, 209, 209) 30%, rgba(255, 255, 255, 0) 100%),
-        url('../img/sobre-escritorio.webp') no-repeat center center;
-    background-size: cover;
+/* Tipografia específica da seção Sobre */
+#sobre h2 { margin-bottom: 1rem; }
+#sobre p {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
 }
 
-.sobre-overlay .container {
-    color: var(--azul-primario); /* Troca o texto geral para azul escuro */
-}
-
-.sobre-overlay h2 {
-    color: var(--azul-primario) !important; /* Força o título a ser escuro */
-}
-
-.sobre-overlay p {
-    color: #444; /* Um cinza bem escuro para os parágrafos, melhor que o branco */
-}
-
-.sobre-content { z-index: 2; }
-
-.border-gold {
+/* Box de Citação (Itálico) */
+.italic-box {
     border-left: 5px solid var(--dourado) !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-left: 1.5rem;
 }
 
-/* Elementos de Imagem (Se usar tag <img> em vez de overlay) */
+/* Estilização da Imagem do Rafael */
 .sobre-img {
-    max-height: 850px;
+    max-height: 550px;
     width: auto;
     object-fit: cover;
+    border-radius: 1rem;
 }
 
-.sobre-img-container { padding: 20px; }
+.over-img-container {
+    position: relative;
+    padding: 20px;
+}
 
+/* Badge de Transparência 100% */
 #badge-transparencia {
-    bottom: 20px;
+    position: absolute;
+    bottom: -30px;
     left: -20px;
+    z-index: 5;
     transform: translate(-50%, 0);
 }
 
-/* 6. SEÇÃO ATUAÇÃO (Cards) */
+.badge-content {
+    background-color: var(--dourado);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.badge-content h4 {
+    font-size: 2.2rem;
+    color: var(--branco);
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.badge-content small {
+    letter-spacing: 1px;
+    color: var(--branco);
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   6. SEÇÃO ATUAÇÃO (Cards de Especialidades)
+   ========================================================================== */
 #atuacao {
     background-color: var(--cinza-suave);
     padding: 80px 0;
@@ -171,20 +199,52 @@ body {
     box-shadow: 0 10px 30px rgba(10, 34, 62, 0.08);
     transition: all 0.4s ease;
     border: none;
+    padding: 1.5rem !important;
+    min-height: 280px;
 }
 
+/* Ícones dos Cards */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: #f8f1df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+.icon-box i { font-size: 1.5rem !important; }
+
+/* Textos do Card */
+.custom-card-atuacao h5 { font-size: 1.15rem; }
+.custom-card-atuacao p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #6c757d;
+}
+
+/* Efeito Hover nos Cards */
 .custom-card-atuacao:hover {
-    background-color: var(--azul-primario);
+    background-color: var(--azul-primario) !important;
     transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(10, 34, 62, 0.3) !important;
 }
 
-.custom-card-atuacao:hover h3, 
+.custom-card-atuacao:hover h5, 
 .custom-card-atuacao:hover p,
 .custom-card-atuacao:hover i {
     color: var(--branco) !important;
 }
 
-/* 7. SEÇÃO CONTATO */
+.custom-card-atuacao:hover .icon-box {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ==========================================================================
+   7. SEÇÃO CONTATO
+   ========================================================================== */
 #contato {
     background: var(--azul-primario);
     padding: 80px 0;
@@ -216,7 +276,9 @@ body {
     box-shadow: 0 0 10px rgba(191, 154, 86, 0.3);
 }
 
-/* 8. PÁGINA DE LOGIN */
+/* ==========================================================================
+   8. PÁGINA DE LOGIN
+   ========================================================================== */
 .login-page {
     background: radial-gradient(circle, var(--azul-secundario) 0%, var(--azul-primario) 100%);
     min-height: 100vh;
@@ -230,81 +292,49 @@ body {
 
 .logo-login { color: var(--azul-primario); }
 
-/* 9. MEDIA QUERIES (Responsividade) */
+/* ==========================================================================
+   9. RESPONSIVIDADE (Media Queries)
+   ========================================================================== */
+
+/* Tablets e Desktops Pequenos */
 @media (max-width: 991px) {
-    .sobre-overlay {
-        min-height: auto;
-        padding: 60px 0;
-        background: 
-            linear-gradient(to bottom, rgba(10, 34, 62, 1) 0%, rgba(10, 34, 62, 0.95) 100%),
-            url('../img/sobre-escritorio.webp') no-repeat center center;
-        background-size: cover;
-    }
-    
     .text-sobre h2, .text-sobre p { text-align: center; }
     
-    .italic-box, .diferencial-box {
+    .italic-box {
         text-align: center;
-        justify-content: center;
         border-left: none !important;
-        border-top: 2px solid var(--dourado) !important;
-        padding-top: 20px;
+        border-top: 3px solid var(--dourado) !important;
+        padding-top: 1rem;
     }
 }
 
-@media (max-width: 768px) {
+/* REFINO MOBILE (ADICIONAR AO FINAL DO CSS) */
+@media (max-width: 767px) {
     .brand-logo { height: 35px; }
-    .sobre-img { max-height: 350px; }
-}
+    
+    /* Diminuir respiros exagerados */
+    section { padding: 40px 0 !important; }
+    
+    /* Centralizar textos que ficam estranhos alinhados à esquerda no celular */
+    .text-md-start { text-align: center !important; }
+    
+    /* Ajustar a Hero para não ocupar 100vh (evita que o rosto do Rafael suma) */
+    .hero-with-background { min-height: 70vh; }
 
-/* Customização para a imagem na seção SOBRE */
-.sobre-img {
-    max-height: 550px; /* Limita a altura máxima para não quebrar o layout */
-    width: auto;       /* Mantém a proporção */
-    object-fit: cover; /* Garante que preencha o espaço sem distorcer, caso necessário */
-}
-
-/* Centralização do container da imagem e do badge */
-.over-img-container {
-    position: relative;
-    padding: 20px; /* Dá um respiro lateral, se necessário */
-}
-
-/* Correção na posição do Badge Dourado (100% Transparência) */
-#badge-transparencia {
-    bottom: -30px; /* Ajuste para que o badge 'saia' um pouco para fora da imagem no fundo */
-    left: -20px;   /* Ajuste para que fique um pouco para a esquerda */
-    z-index: 5;    /* Garante que fique acima da imagem */
-    transform: translate(-50%, 0); /* Garante centralização lateral correta se usar bottom/left */
-}
-
-/* Estilo do conteúdo do badge */
-.badge-content h4 {
-    font-size: 2.2rem;
-    color: var(--branco);
-}
-.badge-content small {
-    letter-spacing: 1px;
-    color: var(--dourado-claro);
-}
-
-/* RESPONSIVIDADE: Ajuste para celulares */
-@media (max-width: 768px) {
+    /* Forçar a imagem a ocupar a largura total no mobile sem limite de altura */
     .sobre-img {
-        max-height: 350px; /* Reduz a altura máxima em telas menores */
+        max-height: 350px;
+        width: 100%;
+        object-fit: cover;
     }
-}
 
-#sobre p {
-    margin-bottom: 0.8rem; /* Controla o espaço entre um parágrafo e outro */
-    line-height: 1.5;      /* Controla a altura da linha (entrelinha) do texto */
-}
-
-#sobre h2 {
-    margin-bottom: 1rem;   /* Espaço abaixo do título principal */
-}
-
-.italic-box {
-    margin-top: 1.5rem !important;    /* Espaço acima da citação */
-    margin-bottom: 1.5rem !important; /* Espaço abaixo da citação */
+    /* Remover o badge no mobile ou fixar a posição */
+    #badge-transparencia {
+        position: relative !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        margin: 20px auto;
+        display: none; /* Esconde o badge em telas muito pequenas para não poluir */
+    }
 }
