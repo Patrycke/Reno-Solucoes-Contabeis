@@ -338,3 +338,11 @@ body {
         display: none; /* Esconde o badge em telas muito pequenas para não poluir */
     }
 }
+
+@media (max-width: 768px) {
+    .custom-card-atuacao .btn {
+        width: 100%; /* Botão ocupa a largura toda no celular, facilitando o clique */
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
