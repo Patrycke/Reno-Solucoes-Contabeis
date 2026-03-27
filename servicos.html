@@ -12,31 +12,36 @@
 </head>
 <body>
 
-    <!-- 1. NAVBAR (Padronizada com a Home) -->
-    <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center custom-logo" href="index.html">
-                <img src="img/logo-marca-solida.png" alt="Logo Renó" class="brand-logo me-2">
-                RENÓ <span>SOLUÇÕES CONTÁBEIS</span>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list text-white fs-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active text-gold" href="servicos.html">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="index.html#contato">Contato</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn custom-btn-outline btn-sm" href="login.html">
-                            <i class="bi bi-person-lock me-2"></i>Área do Cliente
-                        </a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+    <div class="container">
+        <a class="navbar-brand custom-logo" href="#">
+        <img src="../img/logo-reno.webp" alt="Logo Renó Contabilidade" class="brand-logo img-fluid">
+            <span class="text-white">RENÓ </span><span class="text-gold">SOLUÇÕES CONTÁBEIS</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Botão Mobile -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <i class="bi bi-list text-white fs-1"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <!-- Link Simples para Voltar -->
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="index.html">Home</a>
+                </li>
+                
+                <!-- Botão Área do Cliente -->
+                <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
+                    <a href="login.html" class="btn custom-btn-outline d-flex align-items-center gap-2">
+                        <i class="bi bi-lock"></i> Área do Cliente
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- 2. HEADER DA PÁGINA -->
     <header class="py-5" style="background: var(--azul-primario); border-bottom: 4px solid var(--dourado);">
