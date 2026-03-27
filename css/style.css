@@ -120,10 +120,21 @@ body {
     min-height: 80vh;
     width: 100%;
     background: 
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0) 100%),
-        linear-gradient(to right, rgba(10, 34, 62, 1) 0%, rgba(10, 34, 62, 0.9) 40%, rgba(10, 34, 62, 0) 100%),
-        url('../img/rafael-reno-sobre.png') no-repeat center center;
+        linear-gradient(to right, rgb(255, 255, 255) 0%,rgb(209, 209, 209) 30%, rgba(255, 255, 255, 0) 100%),
+        url('../img/sobre-escritorio.webp') no-repeat center center;
     background-size: cover;
+}
+
+.sobre-overlay .container {
+    color: var(--azul-primario); /* Troca o texto geral para azul escuro */
+}
+
+.sobre-overlay h2 {
+    color: var(--azul-primario) !important; /* Força o título a ser escuro */
+}
+
+.sobre-overlay p {
+    color: #444; /* Um cinza bem escuro para os parágrafos, melhor que o branco */
 }
 
 .sobre-content { z-index: 2; }
@@ -244,4 +255,42 @@ body {
 @media (max-width: 768px) {
     .brand-logo { height: 35px; }
     .sobre-img { max-height: 350px; }
+}
+
+/* Customização para a imagem na seção SOBRE */
+.sobre-img {
+    max-height: 550px; /* Limita a altura máxima para não quebrar o layout */
+    width: auto;       /* Mantém a proporção */
+    object-fit: cover; /* Garante que preencha o espaço sem distorcer, caso necessário */
+}
+
+/* Centralização do container da imagem e do badge */
+.over-img-container {
+    position: relative;
+    padding: 20px; /* Dá um respiro lateral, se necessário */
+}
+
+/* Correção na posição do Badge Dourado (100% Transparência) */
+#badge-transparencia {
+    bottom: -30px; /* Ajuste para que o badge 'saia' um pouco para fora da imagem no fundo */
+    left: -20px;   /* Ajuste para que fique um pouco para a esquerda */
+    z-index: 5;    /* Garante que fique acima da imagem */
+    transform: translate(-50%, 0); /* Garante centralização lateral correta se usar bottom/left */
+}
+
+/* Estilo do conteúdo do badge */
+.badge-content h4 {
+    font-size: 2.2rem;
+    color: var(--branco);
+}
+.badge-content small {
+    letter-spacing: 1px;
+    color: var(--dourado-claro);
+}
+
+/* RESPONSIVIDADE: Ajuste para celulares */
+@media (max-width: 768px) {
+    .sobre-img {
+        max-height: 350px; /* Reduz a altura máxima em telas menores */
+    }
 }
