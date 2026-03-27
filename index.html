@@ -217,76 +217,16 @@
     </div>
 </section>
 
-
-
 <!-- SEÇÃO: BLOG / NOTÍCIAS -->
 <section id="blog" class="py-5 bg-white">
     <div class="container py-5">
-        <div class="row align-items-center mb-5">
-            <div class="col-lg-8 text-center text-lg-start">
-                <h6 class="text-gold fw-bold text-uppercase mb-2">Conteúdo Estratégico</h6>
-                <h2 class="display-5 fw-bold" style="color: var(--azul-primario);">Blog <span class="text-gold">Renó</span></h2>
-                <p class="lead text-muted">Informação de valor para o seu negócio e sua carreira profissional.</p>
-            </div>
-            <div class="col-lg-4 text-center text-lg-end d-none d-lg-block">
-                <a href="blog.html" class="btn custom-btn-outline px-4">Ver todos os artigos</a>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <!-- Artigo 1 -->
-            <div class="col-lg-4 col-md-6">
-                <article class="card h-100 border-0 shadow-sm overflow-hidden blog-card">
-                    <div class="position-relative">
-                        <img src="img/blog-impostos.jpg" class="card-img-top" alt="Redução de Impostos">
-                        <span class="badge bg-gold position-absolute top-0 start-0 m-3">Tributário</span>
-                    </div>
-                    <div class="card-body p-4">
-                        <small class="text-muted d-block mb-2"><i class="bi bi-calendar3 me-2"></i>15 Mar, 2024</small>
-                        <h5 class="card-title fw-bold mb-3" style="color: var(--azul-primario);">5 Dicas para reduzir impostos na Prestação de Serviços</h5>
-                        <p class="card-text text-muted small">Saiba como o planejamento tributário pode aumentar sua margem de lucro de forma legal...</p>
-                        <a href="post-exemplo.html" class="text-gold fw-bold text-decoration-none stretched-link">Ler artigo <i class="bi bi-arrow-right ms-1"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Artigo 2 -->
-            <div class="col-lg-4 col-md-6">
-                <article class="card h-100 border-0 shadow-sm overflow-hidden blog-card">
-                    <div class="position-relative">
-                        <img src="img/blog-abertura.jpg" class="card-img-top" alt="Abertura de Empresa">
-                        <span class="badge bg-gold position-absolute top-0 start-0 m-3">Empreendedorismo</span>
-                    </div>
-                    <div class="card-body p-4">
-                        <small class="text-muted d-block mb-2"><i class="bi bi-calendar3 me-2"></i>10 Mar, 2024</small>
-                        <h5 class="card-title fw-bold mb-3" style="color: var(--azul-primario);">MEI ou Microempresa: Qual o melhor caminho para você?</h5>
-                        <p class="card-text text-muted small">Entenda as principais diferenças e quando é o momento certo de fazer o desenquadramento...</p>
-                        <a href="post-exemplo.html" class="text-gold fw-bold text-decoration-none stretched-link">Ler artigo <i class="bi bi-arrow-right ms-1"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Artigo 3 -->
-            <div class="col-lg-4 col-md-6">
-                <article class="card h-100 border-0 shadow-sm overflow-hidden blog-card">
-                    <div class="position-relative">
-                        <img src="img/blog-financeiro.jpg" class="card-img-top" alt="Gestão Financeira">
-                        <span class="badge bg-gold position-absolute top-0 start-0 m-3">Gestão</span>
-                    </div>
-                    <div class="card-body p-4">
-                        <small class="text-muted d-block mb-2"><i class="bi bi-calendar3 me-2"></i>05 Mar, 2024</small>
-                        <h5 class="card-title fw-bold mb-3" style="color: var(--azul-primario);">A importância da separação entre contas PF e PJ</h5>
-                        <p class="card-text text-muted small">O erro clássico que pode levar seu negócio ao caos financeiro e como resolvê-lo hoje...</p>
-                        <a href="post-exemplo.html" class="text-gold fw-bold text-decoration-none stretched-link">Ler artigo <i class="bi bi-arrow-right ms-1"></i></a>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <!-- Botão visível apenas no Mobile -->
-        <div class="text-center mt-5 d-lg-none">
-            <a href="blog.html" class="btn custom-btn-outline w-100">Ver todos os artigos</a>
-        </div>
+        <div class="row g-4" id="blog-container">
+    <!-- O JavaScript vai injetar os cards aqui dentro -->
+    <div class="text-center py-5">
+        <div class="spinner-border text-gold" role="status"></div>
+        <p>Carregando artigos...</p>
+    </div>
+</div>
     </div>
 </section>
 
@@ -336,6 +276,46 @@
         
         window.open(url, '_blank');
     });
+</script>
+
+<script>
+    const blogContainer = document.getElementById('blog-container');
+
+    async function carregarPosts() {
+        try {
+            // Aqui você colocaria a URL do seu Headless CMS
+            const response = await fetch('URL_DO_SEU_CMS_AQUI');
+            const posts = await response.json();
+
+            // Limpa o spinner de carregamento
+            blogContainer.innerHTML = '';
+
+            // Mapeia os dados do CMS para o SEU layout CSS
+            posts.forEach(post => {
+                const card = `
+                    <div class="col-lg-4 col-md-6">
+                        <article class="card h-100 border-0 shadow-sm overflow-hidden blog-card">
+                            <div class="position-relative">
+                                <img src="${post.imagemUrl}" class="card-img-top" alt="${post.titulo}">
+                                <span class="badge bg-gold position-absolute top-0 start-0 m-3">${post.categoria}</span>
+                            </div>
+                            <div class="card-body p-4">
+                                <small class="text-muted d-block mb-2"><i class="bi bi-calendar3 me-2"></i>${post.data}</small>
+                                <h5 class="card-title fw-bold mb-3" style="color: var(--azul-primario);">${post.titulo}</h5>
+                                <p class="card-text text-muted small">${post.resumo}</p>
+                                <a href="post.html?id=${post.id}" class="text-gold fw-bold text-decoration-none stretched-link">Ler artigo <i class="bi bi-arrow-right ms-1"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                `;
+                blogContainer.innerHTML += card;
+            });
+        } catch (error) {
+            blogContainer.innerHTML = '<p class="text-center">Erro ao carregar o blog. Tente novamente mais tarde.</p>';
+        }
+    }
+
+    carregarPosts();
 </script>
 
 </body>
